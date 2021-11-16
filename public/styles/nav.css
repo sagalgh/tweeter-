@@ -1,0 +1,35 @@
+nav {
+  height: 120px;
+  width: 100vw;
+  background-color: #4056A1;
+  position:relative;
+  color: #FFFFFF;
+  padding: 0 1.5em;
+  display: flex;
+  flex-direction:row;
+ 
+}
+
+.nav-row {
+  display: flex;
+  flex:1;
+  justify-content:flex-start;
+
+}
+.nav-column{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+
+
+
+/* 
+120 pixels in height
+Full width of the viewport
+#4056A1 as its default background colour
+#FFFFFF as its default font colour
+<span> within the <nav> uses Bungee as its default font-family
+1.5ems of space on the right and left between the content and the edges */
