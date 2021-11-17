@@ -10,7 +10,9 @@ $(document).ready(function() {
       $(this).parents("form").children("output").removeClass('red-counter')
     }
 })
+ 
 });
+
 
 // [ ] A container element that contains the tweets
 // [ ] The styling of the tweet, as shown in the first screenshot below

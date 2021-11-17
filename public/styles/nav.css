@@ -2,12 +2,13 @@ nav {
   height: 120px;
   width: 100vw;
   background-color: #4056A1;
-  position:relative;
   color: #FFFFFF;
   padding: 0 1.5em;
   display: flex;
   flex-direction:row;
- 
+  position: sticky;
+  top: 0;
+  z-index:1;
 }
 
 .nav-row {

@@ -43,8 +43,6 @@ main {
   border: solid black 2px
 }
 
-
-
 .tweet-header{
   display:flex;
   flex-direction: row;
