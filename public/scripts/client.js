@@ -5,7 +5,7 @@
 // //  */
 // const $tweet = $(`<article class="tweet">Hello world</article>`);
 
-const { text } = require("body-parser")
+// const { text } = require("body-parser")
 
 // Test / driver code (temporary). Eventually will get this from the server.
 
@@ -70,14 +70,20 @@ const createTweetElement = function(tweetData){
 // Test / driver code (temporary)
 // console.log($tweet); // to see what it looks like
 $(document).ready(function() {
-  $('#tweet-submit').on('submit', (evt) => {
+  $('#tweet-submit').on('submit', function(evt){
     evt.preventDefault();
-    const val= $(evt.target.text).serialize();
-    console.log("VAL-----", val)
-  
-    // $.post("/tweets/", val.then(()=>{
-    //   console.log($("tweets/").val())
-    // }))
-  })
-  renderTweets(data)
-}); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+    const val= $(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: val
+    }).then((res)=>{
+        console.log("VAL-----",val)
+      })
+  //  $.post("/tweets", val).then(()=>{
+  //   console.log("VAL-----",val)
+  // })
+})
+renderTweets(data)
+});
+ // to add it to the page so we can make sure it's got all the right elements, classes, etc.
