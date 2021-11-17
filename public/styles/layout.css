@@ -23,14 +23,65 @@ body {
 }
 
 main {
-  display: flex;
+  /* display: flex; */
   width: 90%;
   margin: 0px 30px; 
-  justify-content: center;
-align-items:center;
+  /* justify-content: center; */
+  /* align-items:center; */
 
 }
 
+.tweets-container{
+ padding: 15px 15px;
+  /* display:flex; */
+  /* align-items:baseline; */
+  border: solid black 2px;
+  margin-bottom:100px;
+}
+.tweets-container:hover{
+  box-shadow: 5px 5px rgb(128, 165, 187);
+  border: solid black 2px
+}
+
+
+
+.tweet-header{
+  display:flex;
+  flex-direction: row;
+}
+.line-under-tweet{
+  padding: 2px;
+  width: 100%;
+  background-color: black
+}
+.tweet-footer{
+  font-size: small;
+  display: flex;
+
+}
+.tweet-footer p{
+  display:flex;
+  flex:1;
+}
+.icons{
+ display:flex;
+justify-content: space-evenly;
+  align-items: center;
+
+}
+.user-handle{
+display: flex;
+flex:1;
+justify-content: flex-end; 
+color:slategrey
+}
+ .fa-flag, .fa-retweet,.fa-heart{ 
+  margin: 0px 5px;
+  color:royalblue
+}
+.fa-flag:hover, .fa-retweet:hover,.fa-heart:hover{
+  color: goldenrod
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
