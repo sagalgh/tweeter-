@@ -30,15 +30,17 @@ main {
   /* align-items:center; */
 
 }
-
+.tweet{
+  border: solid black 2px;
+  margin-top: 10px
+}
 .tweets-container{
  padding: 15px 15px;
   /* display:flex; */
   /* align-items:baseline; */
-  border: solid black 2px;
   margin-bottom:100px;
 }
-.tweets-container:hover{
+.tweet:hover{
   box-shadow: 5px 5px rgb(128, 165, 187);
   border: solid black 2px
 }
