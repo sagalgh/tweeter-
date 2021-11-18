@@ -18,20 +18,20 @@ const escape = function (str) {
 // const safeHTML = `<p>${escape(textFromUser)}</p>`;
 
 
-const renderTweets = function(tweets) {
+const renderTweets = function (tweets) {
   $('.tweets-container').empty();
-  for (let tweet of tweets){
+  for (let tweet of tweets) {
     // calls createTweetElement for each tweet
     const $tweet = createTweetElement(tweet)
     // takes return value and appends it to the tweets container
     $('.tweets-container').prepend($tweet)
   }
 }
-const createTweetElement = function(tweetData){
-//  const $tweet =  $("<article>").addClass("tweet");
+const createTweetElement = function (tweetData) {
+  //  const $tweet =  $("<article>").addClass("tweet");
 
-    // $tweet.append(`
-    const tweet= `
+  // $tweet.append(`
+  const tweet = `
   <div>
       <header class = "tweet-header">
         <span><img src="${tweetData.user.avatars}"></img> ${tweetData.user.name}</span>
@@ -57,39 +57,43 @@ const createTweetElement = function(tweetData){
 
 // Test / driver code (temporary)
 // console.log($tweet); // to see what it looks like
-$(document).ready(function() {
-  function loadTweets(){
+$(document).ready(function () {
+  function loadTweets() {
     $.ajax({
-      type: "GET", 
-      url:"/tweets", 
-      dataType:"json"
-    }).then((res)=>{
+      type: "GET",
+      url: "/tweets",
+      dataType: "json"
+    }).then((res) => {
       renderTweets(res);
       // console.log("response--",res)
-      })
-    };  
+    })
+  };
   loadTweets();
-  $('#tweet-submit').on('submit', function(evt){
-
+  $('#tweet-submit').on('submit', function (evt) {
     evt.preventDefault();
-    const val= $(this).serialize();
-    if($("#tweet-text").val().length === 0){
-      alert("Error- Field empty")
+    if ($("#tweet-text").val().length === 0) {
+      $(".error-message").slideDown("slow", function () {
+        console.log("here----")
+        return $(`Error- field is empty`)
+      });
     }
-    if($("#tweet-text").val().length > 140){
-      alert("Error- number of character exceeded")
-    }
-//  console.log(evt.target.tweet.value)
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: val
-    }).then((res)=>{
-      //  console.log("VAL-----",val)
+    if ($("#tweet-text").val().length > 140) {
+      // alert("Error- number of character exceeded")
+      $(".error-message").slideDown("slow", function () {
+        return $(`Error- It's toooo long!`)
+      })
+    } else {
+      //  console.log(evt.target.tweet.value)
+      const $val = $(this).serialize();
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: $val
+      }).then((res) => {
         loadTweets()
       })
-    
-})
+    }
+  })
 
 
 
