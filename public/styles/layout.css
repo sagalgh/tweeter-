@@ -82,6 +82,21 @@ color:slategrey
 .fa-flag:hover, .fa-retweet:hover,.fa-heart:hover{
   color: goldenrod
 }
+
+.error-message{
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url('https://i.imgur.com/GnyDvKN.png');
+  border: 1px solid;
+  margin: 10px auto;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  max-width: 460px;
+  display:flex;
+}
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

@@ -15,6 +15,8 @@ const escape = function (str) {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
+// const safeHTML = `<p>${escape(textFromUser)}</p>`;
+
 
 const renderTweets = function(tweets) {
   $('.tweets-container').empty();
@@ -36,7 +38,7 @@ const createTweetElement = function(tweetData){
         <span class= "user-handle">${tweetData.user.handle}</span>
       </header>
       <div class = "tweet-body">
-        <p>${tweetData.content.text}</p>
+        <p>${escape(tweetData.content.text)}</p>
         <div class= "line-under-tweet"></div> 
       </div>
       <footer class= "tweet-footer">
@@ -63,7 +65,7 @@ $(document).ready(function() {
       dataType:"json"
     }).then((res)=>{
       renderTweets(res);
-      console.log("response--",res)
+      // console.log("response--",res)
       })
     };  
   loadTweets();
@@ -71,7 +73,6 @@ $(document).ready(function() {
 
     evt.preventDefault();
     const val= $(this).serialize();
-    
     if($("#tweet-text").val().length === 0){
       alert("Error- Field empty")
     }
@@ -84,7 +85,7 @@ $(document).ready(function() {
       url: "/tweets",
       data: val
     }).then((res)=>{
-        // console.log("VAL-----",val)
+      //  console.log("VAL-----",val)
         loadTweets()
       })
     
