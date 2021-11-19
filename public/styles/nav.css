@@ -23,7 +23,12 @@ nav {
   justify-content:center;
   align-items: center;
 }
-
+@media only screen and (max-width: 1024px) {
+  nav {
+    background-color:hsla(40, 91%, 43%, 0.921);
+    color: white;
+  }
+}
 
 
 

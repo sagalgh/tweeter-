@@ -72,18 +72,17 @@ $(document).ready(function () {
   $('#tweet-submit').on('submit', function (evt) {
     evt.preventDefault();
     if ($("#tweet-text").val().length === 0) {
-      $(".error-message").slideDown("slow", function () {
-        console.log("here----")
-        return $(`Error- field is empty`)
-      });
-    }
+      $(".error-message")
+      .text(`Error- field is empty`) 
+      .slideDown()
+      };
+    
     if ($("#tweet-text").val().length > 140) {
-      // alert("Error- number of character exceeded")
-      $(".error-message").slideDown("slow", function () {
-        return $(`Error- It's toooo long!`)
-      })
-    } else {
-      //  console.log(evt.target.tweet.value)
+      $(".error-message")
+      .text(`Error- It's toooo long!`) 
+      .slideDown()
+
+    }else {
       const $val = $(this).serialize();
       $.ajax({
         type: "POST",
@@ -91,6 +90,9 @@ $(document).ready(function () {
         data: $val
       }).then((res) => {
         loadTweets()
+        $("#tweet-submit").get(0).reset();
+        $("#tweet-text").val("");
+        $(".counter").val(140);
       })
     }
   })

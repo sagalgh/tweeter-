@@ -3,7 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-   
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -39,7 +39,7 @@
 
     <header class= "main-header">
           <img src="/images/profile-hex.png"> 
-          <h2>Sagal</h2>
+          <h2><strong>Sagal </strong>Ghelle</h2>
 
 
   </header>
@@ -48,7 +48,7 @@
     <main class="container">
       <section class="new-tweet">
         
-        <h2>Compose Tweet</h2>
+        <h2></h2>
         <form id= 'tweet-submit' method= "POST" action="/tweets">
           <div class='text-input'>
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
@@ -57,9 +57,9 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
         </form>
 
-        <script class= "error-message">
-         `Error:here`
-        </script>
+          <div class="error-message">
+      </div>
+        
 
       </section>
       <section>

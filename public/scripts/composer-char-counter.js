@@ -9,6 +9,7 @@ $(document).ready(function() {
     else{
       $(this).parents("form").children("output").removeClass('red-counter')
     }
+    
 })
  
 });

@@ -5,8 +5,15 @@
   align-items:center;
   justify-content: center;
   flex-direction: column;
-  background-color:#e0a100;
-  background-image:url(http://www.transparenttextures.com/patterns/concrete-wall-3.png);
+  background-color:hsla(40, 91%, 43%, 0.921);
+  color: white;
+  /* ; */
   /* padding-top: 200px; */
-
+}
+@media only screen and (min-width: 1024px) {
+  .main-header {
+    width: 28vw;
+    float: left;
+    margin: 3em, 0.5em, 0.5em, 1.5em;
+  }
 }
