@@ -1,7 +1,7 @@
 nav {
   height: 120px;
   width: 100vw;
-  background-color: #4056A1;
+  /* background-color: #4056A1; */
   color: #FFFFFF;
   padding: 0 1.5em;
   display: flex;
@@ -24,10 +24,17 @@ nav {
   align-items: center;
 }
 @media only screen and (max-width: 1024px) {
-  nav {
-    background-color:hsla(40, 91%, 43%, 0.921);
-    color: white;
+  nav{
+   position: absolute;
+   top: 0;
   }
+  main{
+    margin-top: 17em;
+  }
+  header img{
+    padding-top:2em;
+  }
+ 
 }
 
 

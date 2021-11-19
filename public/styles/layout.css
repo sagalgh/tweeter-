@@ -117,6 +117,7 @@ color:slategrey
     width: 85vh;
     float: right;
   }
- 
-
+  nav{
+    background-color: #4056A1;
+  }
 }

@@ -96,9 +96,5 @@ $(document).ready(function () {
       })
     }
   })
-
-
-
-
 });
  // to add it to the page so we can make sure it's got all the right elements, classes, etc.
